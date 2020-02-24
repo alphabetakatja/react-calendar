@@ -1,0 +1,68 @@
+.month-heading {
+  color: #3f51b5;
+  text-align: center;
+  padding-top: 1rem;
+  letter-spacing: 1em;
+}
+
+.table-dimensions {
+  max-width: 95%;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.week-day {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.shifts {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 0.3rem;
+}
+
+.shifts.morning {
+  color: white;
+  background-color: #3f51b5;
+}
+
+.shifts.afternoon {
+  background-color: #b2dffb;
+  color: #3f51b5;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.calendar-btn {
+  width: 10rem;
+  margin-right: 2rem;
+}
+
+.day {
+  font-size: 0.8em;
+}
+
+.day {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.current-day {
+  background-color: #4285f4;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 2%;
+  color: white;
+}
