@@ -1,0 +1,25 @@
+{
+  "schedule": {
+    "Mon": {
+      "morning": "Peter",
+      "evening": "Jodi"
+    },
+    "Tue": {
+      "morning": "Alexis",
+      "evening": "Will"
+    },
+    "Wed": {
+      "morning": "Frank",
+      "evening": "Peter"
+    },
+    "Thu": {
+      "morning": "Jodi",
+      "evening": "Alexis"
+    },
+    "Fri": {
+      "morning": "Will",
+      "evening": "Frank"
+    }
+  },
+  "employees": ["Peter", "Jodi", "Alexis", "Will", "Frank"]
+}
