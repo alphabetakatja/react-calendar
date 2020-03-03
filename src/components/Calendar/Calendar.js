@@ -1,4 +1,5 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
+// import axios from "./axios";
 // import Grid from '@material-ui/core/Grid';
 // import Dialog from '@material-ui/core/Dialog';
 import Paper from '@material-ui/core/Paper';
@@ -50,6 +51,19 @@ class Calendar extends Component {
         };
     }
 
+    // componentDidMount() {
+    //     console.log("calendar has mounted!");
+    //
+    //     axios.get("./data.json").then(res => {
+    //         return res.json();
+    //     }).then(data => {
+    //         console.log("Data in componentDidMount: ", data);
+    //     })
+    // }
+
+    //
+    isDayWeekends = day => day === "Sat" || day === "Sun";
+
     weekdays = moment.weekdays();
     weekdaysShort = moment.weekdaysShort();
     months = moment.months();
@@ -70,9 +84,7 @@ class Calendar extends Component {
         return this.state.dateContext.get("date");
     };
 
-    currentDay = () => {
-        return this.state.dateContext.format("D");
-    };
+    currentDay = () => Number(this.state.dateContext.format("D"));
 
     firstDayOfMonth = () => {
         let dateContext = this.state.dateContext;
@@ -89,21 +101,13 @@ class Calendar extends Component {
 
     render() {
         // Map the weekdays...
-        let weekdays = this.weekdaysShort.map(day => {
-            if (day !== "Sat" && day !== "Sun") {
-                return (
-                    <StyledTableCell key={day} align="center">
-                    {day}
-                    </StyledTableCell>
-                );
-            } else {
-                return (
-                    <StyledTableCell key={day} align="center">
-                    Off
-                    </StyledTableCell>
-                )
-            }
-        });
+
+        let weekdays = this.weekdaysShort.map(day =>
+            <StyledTableCell key={day} align="center">
+                {this.isDayWeekends(day) ? "Off" : day }
+            </StyledTableCell>
+        );
+
         console.log("weekdays: ", weekdays);
 
         // print out the current month
@@ -135,7 +139,7 @@ class Calendar extends Component {
                     <StyledTableCell key={d} className={className} align="center">
                     {d}
                     <div className="shifts morning">Morning</div>
-                    <div className="shifts afternoon">Afternoon</div>
+                    <div className="shifts evening">Evening</div>
                     </StyledTableCell>
                 )
             }
